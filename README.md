@@ -1,27 +1,102 @@
-# JobProvider
+JobPortal – Angular Frontend
+A modern, responsive job portal frontend built using Angular, designed for job providers to manage companies, job posts, applications, interviews, and dashboard analytics. This project integrates seamlessly with the JobPortal Web API (.NET Core) backend.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+🚀 Features
+🔐 Authentication & Authorization
+Login & Signup
 
-## Development server
+JWT‑based authentication
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Guards to protect routes
 
-## Code scaffolding
+Interceptors for attaching tokens
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+JobPortal – Angular Frontend
+A modern, responsive job portal frontend built using Angular, designed for job providers to manage companies, job posts, applications, interviews, and dashboard analytics. This project integrates seamlessly with the JobPortal Web API (.NET Core) backend.
 
-## Build
+🚀 Features
+🔐 Authentication & Authorization
+Login & Signup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+JWT‑based authentication
 
-## Running unit tests
+Guards to protect routes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Interceptors for attaching tokens
 
-## Running end-to-end tests
+👥 Interview Management
+Schedule interviews
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Update or cancel interviews
 
-## Further help
+Interview list and details
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+📊 Dashboard
+Overview of job posts, applications, interviews
+
+| Technology | Purpose |
+| --- | --- |
+| **Angular 16+** | Frontend framework |
+| **TypeScript** | Strong typing |
+| **Bootstrap** | UI styling |
+| **RxJS** | Reactive programming |
+| **Angular Routing** | Navigation |
+| **JWT Auth** | Secure API communication |
+
+## 📁 Project Structure
+
+```
+src/
+ ├── app/
+ │   ├── authorization/
+ │   ├── company/
+ │   ├── companymember/
+ │   ├── job/
+ │   ├── application/
+ │   ├── interview/
+ │   ├── dashboard/
+ │   ├── shared/
+ │   └── core/
+ ├── assets/
+ ├── environments/
+ └── index.html
+```
+Backend API
+This Angular project works with:
+
+👉 JobPortal_WebApi (.NET Core)  
+https://github.com/neethukottoor12/JobPortal_WebApi
+
+▶️ How to Run the Project
+1️⃣ Install dependencies
+
+npm install
+
+2️⃣ Start the development server
+
+ng serve
+
+3️⃣ Open in browser
+
+http://localhost:4200/
+
+📦 Build for Production
+
+ng build --prod
+
+🌐 Deployment
+
+Can be deployed on:
+
+Netlify
+
+Vercel
+
+GitHub Pages
+
+Azure Static Web Apps
+
+👩‍💻 Author
+Neethu K J  
+Angular Developer – Dubai, UAE
+
