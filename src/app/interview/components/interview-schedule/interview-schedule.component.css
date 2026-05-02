@@ -1,0 +1,32 @@
+.timeinput{
+    padding: 10px;
+  border: 1px solid #6c757d;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+.card{
+    width: 400px;
+    background-color: #b684df;
+} 
+.btn1{
+    width: 100px;
+    margin-left: 40%;
+}
+.message1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    width: fit-content;
+}
+.message2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  red;
+    background-color: antiquewhite;
+    width: fit-content;
+
+}

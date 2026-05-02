@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="mt-3">
+        <h2>FIND COMPANY MEMBER</h2>
+    </div>
+    <div class="row mt-1 scrollbar">
+        <div class="col-md-9">
+            <div class="input-group">
+                <input class="form-control border rounded-pill" type="search" id="example-search-input">
+            </div>
+        </div>
+    </div><br>
+    <p><b>showing {{memberList.length}} CompanyMembers</b></p>
+    <div class=" applicationlist row mt-5 px-4">
+        <div class="col-md-6 bg-color">
+            <div class="applicationlist-container">
+            <ng-container *ngFor="let member of memberList ">
+                <div class="card mb-4 p-3">
+                    <div class="row align-items-center">
+                        <div class="col-4 text-center">
+                            <img src="assets/images/Applications/default-user.png" style="width: 100px;">
+                        </div>
+                        <div class="col-8 ">
+                            <h5 class="mb-1">{{ member.firstName+''+member.lastName }}</h5>
+                            <p class="mb-1"><strong>UserName:</strong> {{ member.userName }}</p>
+                            <p class="mb-1"><strong>Email:</strong> {{ member.email }}</p>
+                            <p class="mb-1"><strong>Phone:</strong> {{ member.phone }}</p>
+                            
+                            <div class="d-flex" style="justify-content: space-between;" >
+                                
+                                <button class="btn btn-danger" (click)="openDeleteModal(member.id)" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+            </ng-container>
+            </div>
+
+        </div>
+         <div class="col-md-6 text-align-right">
+            <img src="assets/images/bg-images/business-finance-employment-female.png" class=" w-200 h-200">
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to remove the member?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="onDelete()">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

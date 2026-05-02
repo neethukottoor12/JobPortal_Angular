@@ -1,0 +1,12 @@
+<header class="mt-3">
+    <nav>
+        <ul class="menu" [class.open]="isMenuOpen">
+            <li><a [routerLink]="['/home/interviews/list']">List Interview</a></li>
+            <li><a [routerLink]="['/home/interviews/schedule/:id']">Schedule Interview</a></li>
+        </ul>
+        <div class="menu-toggle" (click)="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+
+</header>

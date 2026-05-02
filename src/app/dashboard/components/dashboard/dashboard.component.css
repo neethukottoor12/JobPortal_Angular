@@ -1,0 +1,11 @@
+
+.bg-light {
+   background: linear-gradient(#7E57C2,#5E35B1);
+    color: azure;
+}
+
+.center{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}

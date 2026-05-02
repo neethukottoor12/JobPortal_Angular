@@ -1,0 +1,41 @@
+h3{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+.fillupForm-card{
+    width: 800px;
+    height: 400px;
+    
+}
+.fillupForm-card input{
+    text-align: center;
+}
+.btn1{
+    width: 150px;
+    background-color: #5A2D82;
+    margin-left: 40%;
+    color: white;
+    
+}
+.error-message{
+    color: red;
+}
+.message1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    width: fit-content;
+    margin-left: 50%;
+}
+.message2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  red;
+    background-color: antiquewhite;
+    width: fit-content;
+    margin-left: 50%;
+
+}

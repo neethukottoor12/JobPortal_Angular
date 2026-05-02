@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center align-items-center ">
+    <form [formGroup]="RegistrationForm" (ngSubmit)="onRegister()">
+        <div class="fillupForm-card mt-2 mb-3 p-4"  style="background-color: rgb(185, 204, 240);">
+            <h3 >Registration of Member</h3>
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <div class="mb-4">
+                     <input type="text" placeholder="FirstName" class="form-control p-3 rounded-pill" formControlName="firstName">
+                     <small class="error-message" *ngIf="RegistrationForm.controls['firstName'].invalid&& RegistrationForm.controls['firstName'].touched">
+                        FirstName Required
+                     </small>
+                    </div>
+                   
+                    <div class="mb-4">
+                     <input type="text" placeholder="UserName" class="form-control  p-3 rounded-pill" formControlName="userName">
+                     <small class="error-message" *ngIf="RegistrationForm.controls['userName'].invalid&& RegistrationForm.controls['userName'].touched">
+                        UserName Required
+                     </small>
+                    </div>
+                    <div class="mb-4">
+                     <input type="text" placeholder="Email" class="form-control p-3 rounded-pill" formControlName="email">
+                     <small class="error-message" *ngIf="RegistrationForm.controls['email'].invalid&& RegistrationForm.controls['email'].touched">
+                        <span *ngIf="RegistrationForm.get('email')?.errors?.['required']" >Email Required</span>
+                        <span *ngIf="RegistrationForm.get('email')?.errors?.['pattern']">Invalid email</span>
+                     </small>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="mb-4">
+                     <input type="text" placeholder="LastName" class="form-control p-3 rounded-pill" formControlName="lastName">
+                     <small class="error-message" *ngIf="RegistrationForm.controls['lastName'].invalid&& RegistrationForm.controls['lastName'].touched">
+                        LastName Required
+                     </small>
+                    </div>
+                    <div class="mb-4">
+                     <input type="text" placeholder="Phone Number" class="form-control p-3 rounded-pill" formControlName="phone">
+                     <small class="error-message" *ngIf="RegistrationForm.controls['phone'].invalid&& RegistrationForm.controls['phone'].touched">
+                        <span *ngIf="RegistrationForm.get('phone')?.errors?.['required']" >Phone number Required</span>
+                        <span *ngIf="RegistrationForm.get('phone')?.errors?.['pattern']">Invalid Phone</span>
+                     </small>
+                    </div>
+                    <div class="mb-4">
+                     <input type="password" placeholder="Password" class="form-control p-3 rounded-pill" formControlName="password">
+                     <small class="error-message" *ngIf="RegistrationForm.controls['password'].invalid&& RegistrationForm.controls['password'].touched">
+                        <span *ngIf="RegistrationForm.get('password')?.errors?.['required']" >Password Required</span>
+                        <span *ngIf="RegistrationForm.get('password')?.errors?.['pattern']">Password must be at least 8 characters and include one uppercase letter, one digit, and one special character. </span>
+                     </small>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="btn btn1 p-2">Register</button>
+        </div>
+    </form>
+    
+</div>
+<div class="message1" *ngIf="successMessage"><img src="assets/images/Interview/success_message.png" style="width: 30px;">{{successMessage}}</div>
+<div class="message2" *ngIf="errorMessage"><img src="assets/images/Interview/error-message-icon-warning-icons.jpg" style="width: 30px;">{{errorMessage}}</div>

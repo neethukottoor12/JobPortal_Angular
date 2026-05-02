@@ -1,0 +1,140 @@
+<form [formGroup]="updateJobForm" (ngSubmit)="onUpdate()">
+<div class="row p-2 rounded bg-white m-1 mt-3">
+
+    <div class="col-md-1"></div>
+        <div class="col-md-6 p-4 border-bottom border-2  ">
+            <h2>Update Job</h2>
+        </div>
+        
+            <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-9">
+
+            <div class="form-group p-4">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" class="form-control  py-4" id="jobTitle"  formControlName="jobTitle"  placeholder="please enter your job Title">
+                <div  class="error-message" *ngIf="updateJobForm.controls['jobTitle'].invalid && updateJobForm.controls['jobTitle'].touched">
+                    Job Title is required.
+                  </div>
+            </div>
+
+            <div class="form-group p-4">
+                <label for="jobSummary">Job Summary</label>
+                <textarea  class="form-control py-4" formControlName="jobSummary" id="jobSummary" placeholder="job Description"></textarea>
+                <div  class="error-message" *ngIf="updateJobForm.controls['jobSummary'].invalid && updateJobForm.controls['jobSummary'].touched">
+                     jobDescription is required.
+                </div>
+            </div>
+
+            <div class="form-group p-4 ">
+                 <label for="locationId">Location</label>
+                <select formControlName="locationId" class="form-control" id="locationId">
+                    <option value="" disabled>Select Location</option>
+                    <option *ngFor="let loc of locationList" [value]="loc.id">{{loc.name}}</option>
+
+                </select> 
+               
+                 <div  class="error-message" *ngIf="updateJobForm.controls['locationId'].invalid && updateJobForm.controls['locationId'].touched">
+                    Location is required.
+                  </div>
+            </div> 
+          
+            <div class="form-group p-4">
+                <label for="companyId">Company Name</label>
+                <select formControlName="companyId" class="form-control" id="companyId">
+                    <option value="" disabled>Select option</option>
+                    <option *ngFor="let com of companyList" [value]="com.id">{{com.legalName}}</option>
+                </select>
+               
+                <div  class="error-message" *ngIf="updateJobForm.controls['companyId'].invalid && updateJobForm.controls['companyId'].touched">
+                    Company Name is required.
+                </div>
+            </div>
+            <div class="form-group p-4">
+                <label for="categoryId">Category</label>
+               <select formControlName="categoryId" class="form-control" id="categoryId">
+                    <option value="" disabled>Select option</option>
+                    <option *ngFor="let cat of categoryList" [value]="cat.id">{{cat.name}}</option>
+                </select>
+                <div  class="error-message" *ngIf="updateJobForm.controls['categoryId'].invalid && updateJobForm.controls['categoryId'].touched">
+                    Job Category is required.
+                </div>
+                  
+            </div>
+
+            <div class="form-group p-4 ">
+                <label for="industryId">Industry</label>
+                <select formControlName="industryId" class="form-control" id="industryId">
+                   <option value="" disabled>Select Industry</option>
+                   <option *ngFor="let ind of industryList" [value]="ind.id">{{ind.name}}</option>
+
+                </select> 
+               
+                <div  class="error-message" *ngIf="updateJobForm.controls['industryId'].invalid && updateJobForm.controls['industryId'].touched">
+                    Industry is required.
+                </div>
+            </div> 
+            <div class="form-group p-4" formArrayName="responsibilities">
+                <div *ngFor="let res of responsibilities.controls; let i = index"[formGroupName]="i" class="d-flex align-items-center mb-2">
+
+                    <input type="text" formControlName="resName" placeholder="Responsibilities" id="resName{{i}}" class="form-control me-2" >
+
+                    <button type="button" (click)="removeResponsibilities(i)" *ngIf="responsibilities.length > 1" class="btn btn-danger">
+                        -
+                    </button>
+                </div>
+
+                <button type="button" (click)="addResponsibility()" class="btn btn-secondary mt-2">
+                 + Add Responsibility
+                </button>
+            </div>
+
+            <div class="form-group p-4" formArrayName="skillIds">
+                <div *ngFor="let skill of skillIds.controls;let i=index" [formGroupName]="i" class="d-flex mb-2">
+                    <select formControlName="skillId" class="form-select me-2" id="skillId{{i}}">
+                        <option value="">Select Skill</option>
+                        <option *ngFor="let skill of skillList" [value]="skill.id">{{skill.name}}</option>
+                    </select>
+                    <button type="button" (click)="removeSkillIds(i)" *ngIf="skillIds.length>1" class="btn btn-danger">-</button>
+                </div>
+                <button type="button" (click)="addSkills()" class="btn btn-secondary mt-2">
+                    + Add Skills
+                </button>
+
+            </div>
+            <div class="form-group p-4" formArrayName="qualificationIds">
+                <div *ngFor="let qual of qualificationIds.controls;let i=index" [formGroupName]="i" class="d-flex align-items-center mb-2" >
+                    <select formControlName="qualificationId" class="form-select me-2" id="qualificationId{{i}}">
+                        <option value="">Select Qualification</option>
+                        <option *ngFor="let q of qualificationList" [value]="q.id">{{q.name}}</option>
+                    </select>
+                    <button type="button" (click)="removeQualifications(i)" *ngIf="qualificationIds.length>1" class="btn btn-danger">-</button>
+                </div>
+                <button type="button" (click)="addQualifications()" class="btn btn-secondary mt-2">
+                    + Add Qualifications
+                </button>
+
+            </div>
+           
+
+            <div class="row">
+                <div class="col-md-4 p-4 ms-3 d-inline"><button type="submit" class="btn p-2 text-white px-5" style="background-color: #20A6FC;">Update Job</button></div>
+                
+
+            </div>
+            </div>
+        </div>
+    </div>
+    
+</form>
+  <div class="message1" *ngIf="successMessage"><img src="assets/images/Interview/success_message.png" style="width: 30px;">{{successMessage}}</div>
+<div class="message2" *ngIf="errorMessage"><img src="assets/images/Interview/error-message-icon-warning-icons.jpg" style="width: 30px;">{{errorMessage}}</div>
+
+  
+        
+   
+
+
+
+
+

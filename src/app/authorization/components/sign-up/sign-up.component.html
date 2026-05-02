@@ -1,0 +1,70 @@
+<div class="d-flex signup-wrapper justify-content-center align-items-center vh-100">
+    <app-spinner *ngIf="loading"></app-spinner>
+    <!-- Floating cubes -->
+    <div class="cube cube-1"></div>
+    <div class="cube cube-2"></div>
+    <div class="cube cube-3"></div>
+
+    
+
+    <div class="signup-card p-4 rounded-4 text-white">
+        
+        <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+
+            <div class="mb-4 w-50">
+                <input type="text" formControlName="firstName" class="form-control rounded-4 p-2 " placeholder="FirstName" >
+                <small class="error-message" *ngIf="signupForm.controls['firstName'].invalid && signupForm.controls['firstName'].touched">
+                    FirstName is required.
+                </small>
+            </div>
+
+            <div class="d-flex  align-items-center mb-4" style="gap: 40px;">
+                <div class="w-50 me-3">
+                    <input type="text" formControlName="lastName" class="form-control rounded-4 p-2 " placeholder="LastName" >
+                    <small class="error-message" *ngIf="signupForm.controls['lastName'].invalid && signupForm.controls['lastName'].touched">
+                        LastName is required.
+                    </small>
+                </div>
+                
+                <button type="submit" [disabled]="signupForm.invalid" class="btn btn-dark px-3 py-2 rounded-4" style="width: 30%;">SignUp</button>
+            </div>
+
+            <div class="d-flex  align-items-center mb-4" style="gap: 70px;">
+                <div class="w-50">
+
+                    <input type="text" formControlName="userName" class="form-control rounded-4 p-2 " placeholder="UserName" >
+                    <small class="error-message" *ngIf="signupForm.controls['userName'].invalid && signupForm.controls['userName'].touched">
+                        UserName is required.
+                    </small>
+                </div>
+                
+                <div>
+                    <p class="m-0" style="color: black; font-size: small;">
+                    Already have an Account?
+                    <a routerLink="/login" class="text-primary">Login</a>
+                </p>
+            </div>
+
+            </div>
+            <div class="mb-4 w-50">
+                <input type="text" formControlName="email" class="form-control rounded-4 p-2 " placeholder="Email" >
+                <small class="error-message" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">
+                    <span *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</span>
+                    <span *ngIf="signupForm.get('email')?.errors?.['email']">Invalid Email</span>
+                </small>
+            </div>
+            <div class="mb-4 w-50">
+                <input type="text" formControlName="phone" class="form-control rounded-4 p-2 " placeholder="Phone" >
+                 <small class="error-message" *ngIf="signupForm.controls['phone'].invalid && signupForm.controls['phone'].touched">
+                    <span *ngIf="signupForm.get('phone')?.errors?.['required']">Phone number is required</span>
+                    <span *ngIf="signupForm.get('phone')?.errors?.['pattern']">Invalid phone number</span>   
+                </small>
+            </div>
+            
+           
+
+        </form>
+    </div>
+    
+</div>
+<div class="message2" *ngIf="errorMessage"><img src="assets/images/Interview/error-message-icon-warning-icons.jpg" style="width: 30px;">{{errorMessage}}</div>

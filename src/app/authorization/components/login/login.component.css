@@ -1,0 +1,21 @@
+.login-wrapper{
+    background: linear-gradient(to bottom, #0d1b4c, #6a1b9a);
+    width: 100%;
+    
+}
+.login-card{
+    width: 380px;
+    background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.login-card a {
+    color: #bbdefb;
+    text-decoration: none;
+}
+
+.login-card a:hover {
+    text-decoration: underline;
+}
+.error-message{
+    color: #ff4d4d;
+}

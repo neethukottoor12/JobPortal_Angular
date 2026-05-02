@@ -1,0 +1,17 @@
+<form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex justify-content-center align-items-center mt-4">
+   
+        <div class="card mb-4 p-4 mt-4">
+            
+                
+            <label style="font-weight: bold;">Select Date&Time </label>
+            <input type="datetime-local" formControlName="date" class="timeinput"><br>
+            <button type="submit" class="btn btn-danger btn1" [disabled]="scheduleForm.invalid" >Submit</button>
+            
+        </div>
+        <img src="assets/images/Interview/date_time.png" style=" width: 100px;">
+    
+    </div>
+    <div class="message1" *ngIf="successMessage"><img src="assets/images/Interview/success_message.png" style="width: 30px;">{{successMessage}}</div>
+    <div class="message2" *ngIf="errorMessage"><img src="assets/images/Interview/error-message-icon-warning-icons.jpg" style="width: 30px;">{{errorMessage}}</div>
+</form>

@@ -1,0 +1,48 @@
+.signup-wrapper{
+    background: linear-gradient(135deg, #1a2b6d 0%, #6678F6 50%, #98A3FB 100%);
+}
+.signup-card{
+    width: 800px;
+    background: linear-gradient(135deg,#8E9CFC,#9099E1);
+}
+.login-link{
+    text-decoration: none;
+}
+.signup-card a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.signup-card a:hover{
+    text-decoration: underline;
+}
+.cube {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transform: rotate(25deg);
+}
+
+.cube-1 { top: 10%; left: 10%; }
+.cube-2 { bottom: 15%; right: 15%; }
+.cube-3 { top: 20%; right: 20%; }
+
+.error-message{
+    color: red;
+}
+.success{
+    width: fit-content;
+    background-color: lightblue;
+}
+.message2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  red;
+    background-color: antiquewhite;
+    width: fit-content;
+
+}

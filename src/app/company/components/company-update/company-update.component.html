@@ -1,0 +1,100 @@
+<div class="row p-2 rounded bg-white m-1 mt-3">
+
+    <div class="col-md-1"></div>
+        <div class="col-md-6 p-4 border-bottom border-2  ">
+            <h3>Add Company</h3>
+        </div>
+        <form [formGroup]="companyUpdateForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-9">
+
+            <div class="form-group p-4">
+                <label  for="legalName">Legal Name</label>
+                <input type="text" class="form-control  py-4"  formControlName="legalName"  placeholder="please enter the company Legal Name">
+                <div  class="error-message" *ngIf="companyUpdateForm.controls['legalName'].invalid && companyUpdateForm.controls['legalName'].touched">
+                    Legal Name is required.
+                  </div>
+                </div>
+          
+                <div class="form-group p-4">
+                <label for="summary">Summary</label>
+                <textarea  class="form-control  py-4"  formControlName="summary" aria-describedby="more"  placeholder="About the company"></textarea>
+                <div  class="error-message" *ngIf="companyUpdateForm.controls['summary'].invalid && companyUpdateForm.controls['summary'].touched">
+                    Summary is required.
+                  </div>
+                </div>
+
+                 <div class="form-group p-4 ">
+                   <label for="industry">Industry</label>
+                   <select formControlName="industry" class="form-control">
+                   <option value="" disabled>Select Industry</option>
+                    <option *ngFor="let ind of industryList" [value]="ind.id">{{ind.name}}</option>
+
+                   </select> 
+               
+                   <div  class="error-message" *ngIf="companyUpdateForm.controls['industry'].invalid && companyUpdateForm.controls['industry'].touched">
+                    Industry is required.
+                   </div>
+                </div> 
+
+                <div class="form-group p-4">
+                    <label for="email">Email</label>
+                    <input type="email"  class="form-control py-4" formControlName="email" placeholder="Please enter company email">                    
+                    <div  class="error-message" *ngIf="companyUpdateForm.controls['email'].invalid && companyUpdateForm.controls['email'].touched">
+                        Email is required.
+                      </div>
+                    </div>
+
+                <div class="form-group p-4">
+                <label for="Phone">Phone</label>
+                <input type="text" class="form-control  py-4" id="phone" formControlName="phone"  placeholder="Enter Company Contact number">
+                <div  class="error-message" *ngIf="companyUpdateForm.controls['phone'].invalid && companyUpdateForm.controls['phone'].touched">
+                    Phone number is required.
+                  </div>
+                  
+                </div>
+
+                <div class="form-group p-4">
+                <label for="address">Address</label>
+                <textarea  class="form-control  py-4" id="address" formControlName="address" placeholder="Please enter Company Address"></textarea>
+                <div  class="error-message" *ngIf="companyUpdateForm.controls['address'].invalid && companyUpdateForm.controls['address'].touched">
+                    Address is required.
+                  </div>
+                  
+                </div>
+                <div class="form-group p-4">
+                    <label for="website">Website</label>
+                    <input type="text" class="form-control  py-4" id="website" formControlName="website" placeholder="Please enter website address">
+                    <div  class="error-message" *ngIf="companyUpdateForm.controls['website'].invalid && companyUpdateForm.controls['website'].touched">
+                        website address required
+                    </div>
+                      
+                </div>
+
+                <div class="form-group p-4 ">
+                   <label for="location">Location</label>
+                   <select formControlName="location" class="form-control">
+                   <option value="" disabled>Select Location</option>
+                    <option *ngFor="let loc of locationList" [value]="loc.id">{{loc.name}}</option>
+
+                   </select> 
+               
+                   <div  class="error-message" *ngIf="companyUpdateForm.controls['location'].invalid && companyUpdateForm.controls['location'].touched">
+                    Location is required.
+                   </div>
+                </div> 
+           
+
+            <div class="row">
+                <div class="col-md-4 p-4 ms-3 d-inline"><button type="submit" [disabled]="companyUpdateForm.invalid" class="btn p-2 text-white px-5" style="background-color: #20A6FC;">Update</button></div>
+                <div *ngIf="successMessage">{{successMessage}}</div>
+
+        </div>
+        
+    </div>
+</div>
+
+</form>
+
+

@@ -1,0 +1,47 @@
+
+
+
+<div class="sidebar">
+  
+  
+    <div class="profile mt-5 image-container">
+      <img [src]="profileImage" alt="Profile Image" class="rounded-circle img-fluid">
+      <label class="upload-btn mt-3">
+    Upload Photo
+    <input type="file" accept="image/*" (change)="uploadPhoto($event)" hidden>
+  </label>
+
+      </div>
+   
+   
+      <ul class="nav flex-column mt-5">
+  
+  
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home/dashboard/']"><img src="../../../../assets/images/sidebar-icons/dashboard.png"><span class="mx-3">Dashboard</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/home/company/add']"><img src="../../../../assets/images/sidebar-icons/company.png" class="icon-size" style="width: 21px;height: 27px;" ><span class="mx-3">Company</span></a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home/jobs/list']"><img src="../../../../assets/images/sidebar-icons/suitcase.png"><span class="mx-3">Jobs</span></a>
+         
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home/applications/list']"><img src="../../../../assets/images/sidebar-icons/application.png"><span class="mx-3">Applications</span></a>
+         
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/home/interviews/list']"><img src="../../../../assets/images/sidebar-icons/question.png"><span class="mx-3">Interviews</span></a>
+        </li>
+       
+        
+          <li class="nav-item mt-5 centered-image">
+            <a class="nav-link" [routerLink]="['/home/companymember/add']"><img src="../../../../assets/images/sidebar-icons/add-group (1) 1.png" class="icon-size " >
+            <p>Add New</p>
+            </a>
+          </li>
+        </ul>
+        </div>
+        

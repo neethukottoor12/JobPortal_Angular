@@ -1,0 +1,32 @@
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.applicationlist-container {
+  max-height: 800px;      /* adjust height as needed */
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Smooth scrollbar */
+.applicationlist-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.applicationlist-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  
+}
+
+.applicationlist-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.applicationlist-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+

@@ -1,0 +1,17 @@
+<header>
+    <nav style="float:right">
+     
+      <div class="menu " [class.responsive]="isResponsive">
+        <a href="#"><img src="../../../../assets/images/header/notification-bing.png" class="img-fluid"></a>
+        <img [src]="profileImage" class="img-fluid" height="5px" routerLink="/home/dashboard/">
+       
+        <div class="logout-btn" (click)="logout()">
+  <img src="../../../../assets/images/header/exit 1.png" class="img-fluid">
+  <span class="mx-2">Logout</span>
+</div>
+      </div>
+      <div class="icon" (click)="toggleResponsive()">
+        <i class="fa fa-bars"></i>
+      </div>
+    </nav>
+  </header>

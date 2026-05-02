@@ -1,0 +1,49 @@
+ <div *ngIf="successMessage" class="success alert ">
+    {{ successMessage }}
+    </div>
+<div class="login-wrapper d-flex justify-content-center align-items-center vh-100">
+   
+
+    <div class="login-card p-4 rounded-4 text-white">
+
+        <h3 class="text-center mb-4">Login</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" >
+            <div class="mb-4">
+                <input type="text" placeholder="Enter your email" class="form-control " formControlName="email" id="email">
+                <small class="error-message" *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                    <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
+                    <span *ngIf="loginForm.get('email')?.errors?.['email']">Invalid Email</span>
+                </small>
+            </div>
+            <div class="mb-4">
+                <input type="password" placeholder="Enter your Password" class="form-control " formControlName="password" id="password" autocomplete="new-password">
+                <small class="error-message" *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+                    <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</span>
+                    <span *ngIf="loginForm.get('password')?.errors?.['pattern']">
+                        Password must be at least 8 characters and include one uppercase letter, one digit, and one special character.
+                    </span>
+                </small>
+            </div>
+            <div class="d-flex mb-4 justify-content-center">
+                <div class="form-check ">
+                    <input class="form-check-input" type="checkbox" id="keeLoggedIn">
+                    <label class="form-check-label" for="keeLoggedIn">Keep me Logged In</label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-4">
+                <button type="submit" [disabled]="loginForm.invalid" class=" btn btn-primary w-10">Login</button>
+            </div>
+                    <div class="text-center mt-3">
+            Forgot password?
+        </div>
+
+        <div class="text-center mt-2">
+            Don't have an account yet?
+            <a routerLink="/signup" class="text-info">Sign up</a>
+        </div>
+
+
+        </form>
+    </div>
+
+</div>
